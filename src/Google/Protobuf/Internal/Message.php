@@ -1512,7 +1512,8 @@ class Message
         } elseif ($field->isRepeated()) {
             return count($values) !== 0;
         } else {
-            return $values !== $this->defaultValue($field);
+            return !is_null($values)
+            // return $values !== $this->defaultValue($field);
         }
     }
 
